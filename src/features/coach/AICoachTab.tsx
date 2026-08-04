@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  BrainCircuit, Send, Sparkles, User, AlertTriangle, ShieldCheck, 
-  Calendar, Check, Terminal, BarChart, Clock, MessageSquareQuote 
+  BrainCircuit, Send, User, AlertTriangle, Clock 
 } from 'lucide-react';
 import { useAppSelector } from '../../store';
 import { GlassCard } from '../../components/ui/GlassCard';

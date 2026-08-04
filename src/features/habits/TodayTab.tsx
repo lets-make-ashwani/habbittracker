@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Plus, Check, X, Clock, Play, Dumbbell, Code, Droplet, Moon, BookOpen, 
-  Trash2, Archive, Edit2, AlertCircle, Sparkles, Filter, Search, Tag, MessageSquare, ArrowLeft
+  Plus, Check, X, Clock, 
+  Trash2, Archive, Edit2, AlertCircle, Sparkles, Search, Tag, MessageSquare
 } from 'lucide-react';
 import { 
   useAppDispatch, useAppSelector, toggleHabitLog, addHabit, editHabit, 
@@ -33,7 +33,6 @@ export const TodayTab: React.FC = () => {
   const [timerHabitId, setTimerHabitId] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
-  const [timerIntervalId, setTimerIntervalId] = useState<NodeJS.Timeout | null>(null);
 
   // Log Notes state
   const [isNotesOpen, setIsNotesOpen] = useState(false);

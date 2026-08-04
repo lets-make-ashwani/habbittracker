@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   AreaChart, Area, BarChart, Bar, PieChart, Pie, Cell, RadarChart, PolarGrid, 
   PolarAngleAxis, PolarRadiusAxis, Radar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
@@ -13,7 +12,6 @@ export const AnalyticsTab: React.FC = () => {
   const habits = useAppSelector((state) => state.habits.list);
   const logs = useAppSelector((state) => state.habits.logs);
   const waterLogs = useAppSelector((state) => state.health.water);
-  const sleepLogs = useAppSelector((state) => state.health.sleep);
   const focusSessions = useAppSelector((state) => state.focus.sessions);
 
   const [timeframe, setTimeframe] = useState<'30days' | '7days'>('30days');
@@ -230,7 +228,7 @@ export const AnalyticsTab: React.FC = () => {
           </div>
           <div className="h-[280px] w-full text-xs flex items-center justify-center">
             <ResponsiveContainer width="100%" height="100%">
-              <RadarChart cx="50%" cy="50%" radius="70%" data={categorySummary}>
+              <RadarChart cx="50%" cy="50%" outerRadius="70%" data={categorySummary}>
                 <PolarGrid stroke="#27272A" />
                 <PolarAngleAxis dataKey="subject" stroke="#A1A1AA" />
                 <PolarRadiusAxis stroke="#A1A1AA" angle={30} domain={[0, 100]} />
@@ -275,7 +273,7 @@ export const AnalyticsTab: React.FC = () => {
                 
                 {/* Labels legend */}
                 <div className="space-y-2 mt-4 md:mt-0 text-left">
-                  {focusPieData.map((item, idx) => (
+                  {focusPieData.map((item) => (
                     <div key={item.name} className="flex items-center space-x-2">
                       <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
                       <span className="text-textCustom font-medium text-xs">{item.name}:</span>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
-  Droplet, Moon, Smile, Sparkles, Plus, Minus, Info, Calendar, 
-  TrendingUp, BarChart2, Star, CheckCircle2, ChevronRight 
+  Droplet, Moon, Smile, Plus, TrendingUp, Star 
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector, logWater, logSleep, logMood, addXpAndCoins } from '../../store';
 import { GlassCard } from '../../components/ui/GlassCard';
@@ -13,7 +12,6 @@ export const HealthTab: React.FC = () => {
   const waterLogs = useAppSelector((state) => state.health.water);
   const sleepLogs = useAppSelector((state) => state.health.sleep);
   const moodLogs = useAppSelector((state) => state.health.mood);
-  const habits = useAppSelector((state) => state.habits.list);
   const habitLogs = useAppSelector((state) => state.habits.logs);
 
   const todayStr = dayjs().format('YYYY-MM-DD');
@@ -77,7 +75,6 @@ export const HealthTab: React.FC = () => {
   const getCorrelationData = () => {
     // Collect average mood on days habits completed vs missed
     const gymHabitId = 'h1'; // gym
-    const codingHabitId = 'h2'; // coding
 
     const gymCompletions = habitLogs.filter(l => l.habitId === gymHabitId && l.status === 'completed').map(l => l.date);
     const gymMissed = habitLogs.filter(l => l.habitId === gymHabitId && l.status !== 'completed').map(l => l.date);

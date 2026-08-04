@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Flame, Award, Coins, Zap, Trophy, ArrowRight, BrainCircuit, Calendar, 
+  Flame, Coins, Zap, Trophy, ArrowRight, BrainCircuit, Calendar, 
   CheckCircle2, Sparkles, Play, Coffee, Target
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector, toggleHabitLog, addXpAndCoins } from '../../store';

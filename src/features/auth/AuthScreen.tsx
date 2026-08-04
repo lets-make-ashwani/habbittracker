@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Lock, User, ArrowRight, ShieldCheck, Check, Loader } from 'lucide-react';
+import { Mail, Lock, User, ArrowRight, ShieldCheck, Loader } from 'lucide-react';
 import { loginUser } from '../../store';
 
 export const AuthScreen: React.FC = () => {

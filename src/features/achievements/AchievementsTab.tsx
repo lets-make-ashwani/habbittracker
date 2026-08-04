@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Lock, CheckCircle2, Coins, Palette, ShieldAlert, Sparkles, Check } from 'lucide-react';
+import { Award, Lock, Coins, Palette, Check } from 'lucide-react';
 import { useAppDispatch, useAppSelector, unlockTheme, setTheme } from '../../store';
 import { GlassCard } from '../../components/ui/GlassCard';
 

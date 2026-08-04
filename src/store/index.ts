@@ -1,6 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import type { TypedUseSelectorHook } from 'react-redux';
 import dayjs from 'dayjs';
 
@@ -245,7 +245,6 @@ const habitsSlice = createSlice({
 
       if (existingLogIdx !== -1) {
         // Toggle off (remove completion)
-        const log = state.logs[existingLogIdx];
         state.logs.splice(existingLogIdx, 1);
         
         // Decrement streak

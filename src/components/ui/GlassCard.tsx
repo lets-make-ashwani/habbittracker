@@ -26,7 +26,7 @@ export const GlassCard: React.FC<GlassCardProps> = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay, type: 'spring', stiffness: 100 }}
         className={baseClass}
-        {...props}
+        {...(props as any)}
       >
         {children}
       </motion.div>

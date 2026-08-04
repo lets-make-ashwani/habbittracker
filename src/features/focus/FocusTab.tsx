@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Play, Pause, RotateCcw, Volume2, VolumeX, Flame, BarChart2, ShieldCheck, 
-  Coffee, HelpCircle, Activity, Sparkles 
+  Play, Pause, RotateCcw, Volume2, VolumeX, BarChart2 
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector, addFocusSession, addXpAndCoins } from '../../store';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { GlassCard } from '../../components/ui/GlassCard';
 
 export const FocusTab: React.FC = () => {

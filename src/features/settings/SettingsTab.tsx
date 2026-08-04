@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Settings, User, Download, Upload, Trash2, KeyRound, ShieldCheck, 
-  Palette, RefreshCw, Eye, EyeOff, Save, Check 
+  User, Download, Upload, Trash2, KeyRound, 
+  Palette, RefreshCw, Save, Check 
 } from 'lucide-react';
 import { useAppDispatch, useAppSelector, updateProfile, setTheme, enable2FA } from '../../store';
 import { GlassCard } from '../../components/ui/GlassCard';

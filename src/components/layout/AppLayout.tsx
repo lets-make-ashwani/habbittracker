@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector, logoutUser, clearLevelUpFlag } from '../../store';
 import { 
   LayoutDashboard, CheckSquare, Calendar, BarChart3, Award, BrainCircuit, 
-  BookOpen, Clock, Heart, Settings, LogOut, Bell, Flame, Coins, ShieldAlert,
-  Menu, X, Sparkles, Trophy
+  BookOpen, Clock, Heart, Settings, LogOut, Bell, Flame, Coins,
+  Menu, X, Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -34,21 +34,6 @@ export const AppLayout: React.FC = () => {
     { id: 'n3', text: "AI Coach suggested slot adjustments for Gym Workout.", time: "1 day ago", unread: false }
   ];
 
-  // Theme styling overrides mapping based on selected theme
-  const getThemeClass = (themeId: string) => {
-    switch (themeId) {
-      case 'midnight':
-        return 'theme-midnight text-[#EC4899]';
-      case 'cyberpunk':
-        return 'theme-cyberpunk text-[#F59E0B]';
-      case 'emerald':
-        return 'theme-emerald text-[#10B981]';
-      case 'lavender':
-        return 'theme-lavender text-[#8B5CF6]';
-      default:
-        return 'theme-default text-[#6366F1]';
-    }
-  };
 
   const getThemePrimaryColor = (themeId: string) => {
     switch (themeId) {

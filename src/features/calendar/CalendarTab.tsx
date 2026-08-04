@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar as CalendarIcon, Filter, Clock, CheckCircle2, ChevronLeft, ChevronRight, X, Heart } from 'lucide-react';
+import { Filter, Clock, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useAppSelector } from '../../store';
 import { GlassCard } from '../../components/ui/GlassCard';
 import dayjs from 'dayjs';
@@ -17,7 +16,8 @@ export const CalendarTab: React.FC = () => {
 
   // Generate 365 days of cells for the selected year
   const startOfYear = dayjs(`${viewYear}-01-01`);
-  const daysInYear = startOfYear.isLeapYear() ? 366 : 365;
+  const isLeap = (viewYear % 4 === 0 && viewYear % 100 !== 0) || viewYear % 400 === 0;
+  const daysInYear = isLeap ? 366 : 365;
   const daysArray = Array.from({ length: daysInYear }, (_, idx) => {
     return startOfYear.add(idx, 'day').format('YYYY-MM-DD');
   });
