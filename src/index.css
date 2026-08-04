@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    background-color: #09090B;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Custom modern scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(9, 9, 11, 0.5);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(63, 63, 70, 0.4);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.5);
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphic container style */
+  .glass-panel {
+    background: rgba(24, 24, 27, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(63, 63, 70, 0.4);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-panel-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .glass-panel-hover:hover {
+    background: rgba(39, 39, 42, 0.7);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 12px 40px 0 rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+  }
+
+  /* Glass input elements */
+  .glass-input {
+    background: rgba(9, 9, 11, 0.6);
+    border: 1px solid rgba(63, 63, 70, 0.6);
+    color: #FFFFFF;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1rem;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .glass-input:focus {
+    border-color: rgba(99, 102, 241, 0.8);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+  }
+
+  /* Premium Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+    color: #FFFFFF;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: rgba(39, 39, 42, 0.6);
+    border: 1px solid rgba(63, 63, 70, 0.8);
+    color: #FFFFFF;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(63, 63, 70, 0.8);
+    border-color: rgba(161, 161, 170, 0.8);
+  }
+
+  /* Heatmap Cells */
+  .heatmap-cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    transition: transform 0.15s ease;
+  }
+
+  .heatmap-cell:hover {
+    transform: scale(1.2);
+    z-index: 10;
+  }
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Hide standard styling of root layout in scaffold */
+#root {
+  max-width: 100% !important;
+  text-align: left !important;
+  border: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
