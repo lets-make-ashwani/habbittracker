@@ -197,6 +197,15 @@ const authSlice = createSlice({
         state.leaderboard[userIdx].name = action.payload.name + ' (You)';
         state.leaderboard[userIdx].avatar = action.payload.avatar;
       }
+    },
+    setProfileData(state, action: PayloadAction<Partial<UserState>>) {
+      Object.assign(state, action.payload);
+    },
+    setAchievements(state, action: PayloadAction<Achievement[]>) {
+      state.achievements = action.payload;
+    },
+    setLeaderboard(state, action: PayloadAction<LeaderboardEntry[]>) {
+      state.leaderboard = action.payload;
     }
   }
 });
@@ -268,6 +277,12 @@ const habitsSlice = createSlice({
           habit.longestStreak = habit.streak;
         }
       }
+    },
+    setHabits(state, action: PayloadAction<Habit[]>) {
+      state.list = action.payload;
+    },
+    setHabitLogs(state, action: PayloadAction<HabitLog[]>) {
+      state.logs = action.payload;
     }
   }
 });
@@ -288,6 +303,9 @@ const journalSlice = createSlice({
     },
     deleteJournalEntry(state, action: PayloadAction<string>) {
       state.entries = state.entries.filter(e => e.id !== action.payload);
+    },
+    setJournalEntries(state, action: PayloadAction<JournalEntry[]>) {
+      state.entries = action.payload;
     }
   }
 });
@@ -325,6 +343,15 @@ const healthSlice = createSlice({
       } else {
         state.mood.push(action.payload);
       }
+    },
+    setWaterLogs(state, action: PayloadAction<WaterLog[]>) {
+      state.water = action.payload;
+    },
+    setSleepLogs(state, action: PayloadAction<SleepLog[]>) {
+      state.sleep = action.payload;
+    },
+    setMoodLogs(state, action: PayloadAction<MoodLog[]>) {
+      state.mood = action.payload;
     }
   }
 });
@@ -342,6 +369,9 @@ const focusSlice = createSlice({
         duration: action.payload.duration,
         category: action.payload.category
       });
+    },
+    setFocusSessions(state, action: PayloadAction<{ date: string; duration: number; category: string }[]>) {
+      state.sessions = action.payload;
     }
   }
 });
@@ -376,7 +406,10 @@ export const {
   unlockTheme,
   setTheme,
   updateAchievementProgress,
-  updateProfile
+  updateProfile,
+  setProfileData,
+  setAchievements,
+  setLeaderboard
 } = authSlice.actions;
 
 export const {
@@ -384,22 +417,29 @@ export const {
   editHabit,
   archiveHabit,
   deleteHabit,
-  toggleHabitLog
+  toggleHabitLog,
+  setHabits,
+  setHabitLogs
 } = habitsSlice.actions;
 
 export const {
   addJournalEntry,
-  deleteJournalEntry
+  deleteJournalEntry,
+  setJournalEntries
 } = journalSlice.actions;
 
 export const {
   logWater,
   logSleep,
-  logMood
+  logMood,
+  setWaterLogs,
+  setSleepLogs,
+  setMoodLogs
 } = healthSlice.actions;
 
 export const {
-  addFocusSession
+  addFocusSession,
+  setFocusSessions
 } = focusSlice.actions;
 
 // Redux hooks types

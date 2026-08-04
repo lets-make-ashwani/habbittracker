@@ -3,8 +3,10 @@ import { useAppSelector } from './store';
 import { SplashScreen } from './components/ui/SplashScreen';
 import { AuthScreen } from './features/auth/AuthScreen';
 import { AppLayout } from './components/layout/AppLayout';
+import { useFirebaseSync } from './hooks/useFirebaseSync';
 
 function App() {
+  useFirebaseSync();
   const [showSplash, setShowSplash] = useState(true);
   const isLoggedIn = useAppSelector((state) => state.auth.isLoggedIn);
 
